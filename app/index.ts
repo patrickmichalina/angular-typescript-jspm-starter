@@ -1,11 +1,13 @@
 /// <reference path="../typings/tsd.d.ts" />
 import {module} from "angular";
-import ComponentModule from './components/components';
 import 'angular-ui-router';
 import {routes} from './layout/routes';
+import ComponentModule from './components/components';
+import CommonModule from './components/components';
 
 export var Module = module("app", [
 	ComponentModule.name,
+    CommonModule.name,
 	'ui.router'
 ]);
 
