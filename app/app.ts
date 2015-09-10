@@ -11,10 +11,15 @@ export var Module = module("app", [
 	'ui.router'
 ]);
 
+// configure the routes
 Module.config(routes);
+
+// remove # from URLs
 Module.config(['$locationProvider', function($locationProvider: ng.ILocationProvider) {
     $locationProvider.html5Mode(true);
 }]);
+
+// exception-handler (for typescript)
 Module.config(['$provide', function($provide: ng.IModule) {
     $provide.decorator('$exceptionHandler', ['$delegate', function ($delegate: any) {
         return function (exception: Error, cause: string) {
