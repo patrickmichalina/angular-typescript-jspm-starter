@@ -1,1 +1,1 @@
-TODO: build and testing tasks
+TODO: add server, build, and testing gulp tasks
