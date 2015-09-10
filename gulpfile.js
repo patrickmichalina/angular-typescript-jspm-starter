@@ -1,9 +1,6 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 
-/*
-	Bundle the example project
-*/
 gulp.task('bundle', function(cb) {
 	var Builder = require('systemjs-builder');
 	var builder = new Builder();
@@ -24,6 +21,7 @@ gulp.task('bundle', function(cb) {
 
 gulp.task('index', function(){
 	return gulp.src('index-bundle.html')
+		// rename here
 		.pipe(gulp.dest('dist'));
 });
 
@@ -36,4 +34,11 @@ gulp.task('serve', function() {
 });
 
 gulp.task('dist', gulp.parallel('bundle', 'index'));
+
+gulp.task('serve-dist', gulp.series('dist', function(){
+	browserSync.init({
+        server: "./dist"
+    });
+}))
+
 gulp.task('default', gulp.series('serve'));
