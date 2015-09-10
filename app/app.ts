@@ -1,6 +1,7 @@
 /// <reference path="../typings/tsd.d.ts" />
 import {module} from "angular";
 import 'angular-ui-router';
+import 'angular-animate';
 import {routes} from './layout/routes';
 import ComponentModule from './components/components';
 import CommonModule from './components/components';
@@ -8,7 +9,8 @@ import CommonModule from './components/components';
 export var Module = module("app", [
 	ComponentModule.name,
     CommonModule.name,
-	'ui.router'
+	'ui.router',
+    'ngAnimate'
 ]);
 
 // configure the routes
