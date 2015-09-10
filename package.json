@@ -26,6 +26,7 @@
     }
   },
   "devDependencies": {
+    "browser-sync": "^2.9.3",
     "gulp": "gulpjs/gulp#4.0",
     "http-server": "^0.8.0",
     "jspm": "^0.16.2",

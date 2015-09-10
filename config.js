@@ -13,7 +13,7 @@ System.config({
 
   packages: {
     "app": {
-      "main": "index",
+      "main": "app",
       "defaultExtension": "ts",
       "meta": {
         "*.ts": {

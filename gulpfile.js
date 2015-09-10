@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var browserSync = require('browser-sync').create();
 
 /*
 	Bundle the example project
@@ -26,4 +27,13 @@ gulp.task('index', function(){
 		.pipe(gulp.dest('dist'));
 });
 
+gulp.task('serve', function() {
+    browserSync.init({
+        server: "./"
+    });
+
+    gulp.watch("./app/**/*.*").on('change', browserSync.reload);
+});
+
 gulp.task('dist', gulp.parallel('bundle', 'index'));
+gulp.task('default', gulp.series('serve'));
