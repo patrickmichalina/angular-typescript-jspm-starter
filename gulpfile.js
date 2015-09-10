@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var rename = require("gulp-rename");
 var browserSync = require('browser-sync').create();
+var historyApiFallback = require('connect-history-api-fallback');
 
 gulp.task('bundle', function(cb) {
 	var Builder = require('systemjs-builder');
@@ -28,7 +29,8 @@ gulp.task('index', function(){
 
 gulp.task('serve', function() {
     browserSync.init({
-        server: "./"
+        server: "./",
+		middleware: [historyApiFallback()]
     });
 
     gulp.watch("./app/**/*.*").on('change', browserSync.reload);
@@ -38,7 +40,8 @@ gulp.task('dist', gulp.parallel('bundle', 'index'));
 
 gulp.task('serve-dist', gulp.series('dist', function(){
 	browserSync.init({
-        server: "./dist"
+        server: "./dist",
+		middleware: [historyApiFallback()]
     });
 }))
 
