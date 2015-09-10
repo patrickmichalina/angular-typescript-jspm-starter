@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-strict-di>
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="fragment" content="!" />
+
+	<title>Angular TypeScript  Starter</title>
+	<base href="/"></base>
+
+	<script src="jspm_packages/system.src.js"></script>
+	<script src="config.js"></script>
+	<script>
+		System.import('app')
+			.then(function() {
+				return System.import('angular');
+			})
+			.then(function(angular) {
+				angular.bootstrap(document, ['app']);
+			})
+			.catch(function(err) {
+				console.log('Error: ', err.stack);
+			});
+	</script>
+</head>
+
+<body ng-cloak>
+	<div ui-view></div>
+</body>
+
+</html>

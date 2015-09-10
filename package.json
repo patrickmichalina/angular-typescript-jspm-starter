@@ -1,0 +1,38 @@
+{
+  "name": "Angular-TypeScript-JSPM-Starter",
+  "author": "Patrick Michalina",
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "A minimal starter project for TypeScript based Angular 1 applications using JSPM",
+  "repository": {
+    "type": "public",
+    "url": "https://github.com/patrickmichalina/angular-typescript-jspm-starter.git"
+  },
+  "jspm": {
+    "registry": "github",
+    "dependencies": {
+      "angular": "angular/bower-angular@^1.4.5",
+      "angular-ui-router": "angular-ui/ui-router@^0.2.15"
+    },
+    "devDependencies": {
+      "css": "systemjs/plugin-css@0.1.16",
+      "scss": "theefer/plugin-sass@master",
+      "text": "systemjs/plugin-text@^0.0.2",
+      "ts": "frankwallis/plugin-typescript@^2.0.12",
+      "typescript": "npm:typescript@^1.6.0-beta"
+    },
+    "buildConfig": {
+      "minify": true
+    }
+  },
+  "devDependencies": {
+    "gulp": "gulpjs/gulp#4.0",
+    "http-server": "^0.8.0",
+    "jspm": "^0.16.2",
+    "systemjs-builder": "^0.13.5",
+    "tsd": "^0.6.4"
+  },
+  "scripts": {
+    "install": "jspm install"
+  }
+}
