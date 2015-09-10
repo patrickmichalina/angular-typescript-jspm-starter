@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var rename = require("gulp-rename");
 var browserSync = require('browser-sync').create();
 
 gulp.task('bundle', function(cb) {
@@ -21,7 +22,7 @@ gulp.task('bundle', function(cb) {
 
 gulp.task('index', function(){
 	return gulp.src('index-bundle.html')
-		// rename here
+		.pipe(rename('index.html'))
 		.pipe(gulp.dest('dist'));
 });
 

@@ -12,7 +12,9 @@ export var Module = module("app", [
 ]);
 
 Module.config(routes);
-
+Module.config(['$locationProvider', function($locationProvider: ng.ILocationProvider) {
+    $locationProvider.html5Mode(true);
+}]);
 Module.config(['$provide', function($provide: ng.IModule) {
     $provide.decorator('$exceptionHandler', ['$delegate', function ($delegate: any) {
         return function (exception: Error, cause: string) {
