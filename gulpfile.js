@@ -27,21 +27,29 @@ gulp.task('index', function(){
 		.pipe(gulp.dest('dist'));
 });
 
+gulp.task('basic-bundle', function(){
+	return gulp.src(['favicon.ico', 'robots.txt'])
+		.pipe(gulp.dest('dist'));
+});
+
 gulp.task('serve', function() {
     browserSync.init({
         server: "./",
-		middleware: [historyApiFallback()]
+		middleware: [historyApiFallback()],
+		browser: "google chrome"
     });
 
     gulp.watch("./app/**/*.*").on('change', browserSync.reload);
 });
 
-gulp.task('dist', gulp.parallel('bundle', 'index'));
+gulp.task('dist', gulp.parallel('bundle', 'index', 'basic-bundle'));
 
 gulp.task('serve-dist', gulp.series('dist', function(){
 	browserSync.init({
         server: "./dist",
-		middleware: [historyApiFallback()]
+		middleware: [historyApiFallback()],
+		browser: "google chrome",
+		minify: true
     });
 }))
 
