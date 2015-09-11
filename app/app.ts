@@ -4,8 +4,8 @@ import 'angular-ui-router';
 import 'angular-animate';
 import {routes} from './layout/routes';
 import {LocationProviderConfig, ExceptionHandlerConfig} from './config/config';
-import ComponentModule from './components/components';
-import CommonModule from './components/components';
+import {ComponentModule} from './components/components';
+import {CommonModule} from './common/common';
 
 let Module = module("app", [
 	ComponentModule.name,

@@ -10,4 +10,4 @@ let ComponentModule = module('app.components', [
 	'ui.router'
 ]);
 
-export default ComponentModule;
+export {ComponentModule};

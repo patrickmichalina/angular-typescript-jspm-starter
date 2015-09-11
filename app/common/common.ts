@@ -5,4 +5,4 @@ let CommonModule = module('app.common', [
 
 ]);
 
-export default CommonModule;
+export {CommonModule};
