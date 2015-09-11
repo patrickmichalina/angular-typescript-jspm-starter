@@ -39,6 +39,6 @@
     "tsd": "^0.6.4"
   },
   "scripts": {
-    "install": "jspm install"
+    "install": "jspm install && tsd install"
   }
 }
