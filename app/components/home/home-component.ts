@@ -3,7 +3,7 @@ import html from './home-template';
 import template from './home-template.html!text';
 import './home-style.scss!';
 
-export let HomeComponent = function() {
+export function HomeComponent() {
 	return {
 		template,
 		controller,
@@ -12,4 +12,4 @@ export let HomeComponent = function() {
 		scope: { },
 		bindToController: true
 	};
-};
+}
