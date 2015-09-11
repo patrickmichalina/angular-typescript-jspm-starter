@@ -7,6 +7,6 @@ let PageTitleServiceModule = angular.module('app.common.services', [
 ]);
 
 PageTitleServiceModule
-    .service('pageTitleService', PageTitleService);
+    .service('PageTitleService', PageTitleService);
 
 export {PageTitleServiceModule};

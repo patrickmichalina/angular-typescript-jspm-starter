@@ -2,9 +2,9 @@
 import html from './main-template';
 import template from './main-template.html!text';
 import './main-style.scss!';
-routes.$inject = ['$stateProvider', '$urlRouterProvider'];
+Routes.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-function routes ($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
+function Routes ($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
     $stateProvider
         .state('main', {
             abstract: true,
@@ -15,4 +15,4 @@ function routes ($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui
     $urlRouterProvider.otherwise('/');
 }
 
-export {routes}
+export {Routes}
