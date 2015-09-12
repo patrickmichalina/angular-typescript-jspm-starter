@@ -3,7 +3,7 @@ import {module} from 'angular';
 import {routes}  from './home-routes';
 import {HomeComponent} from './home-component';
 
-var HomeModule: ng.IModule = angular.module('app.components.home', [
+var HomeModule: ng.IModule = angular.module('home', [
     'ui.router'
  ]);
 

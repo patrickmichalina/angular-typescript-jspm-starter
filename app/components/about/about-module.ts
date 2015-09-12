@@ -3,7 +3,7 @@ import {module} from 'angular';
 import {routes}  from './about-routes';
 import {AboutComponent} from './about-component';
 
-var AboutModule: ng.IModule = angular.module('app.components.about', ['ui.router']);
+var AboutModule: ng.IModule = angular.module('about', ['ui.router']);
 
 AboutModule
     .config(routes)

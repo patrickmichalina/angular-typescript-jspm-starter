@@ -32,13 +32,12 @@
     "connect-history-api-fallback": "^1.1.0",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-rename": "^1.2.2",
-    "http-server": "^0.8.0",
     "jspm": "^0.16.2",
     "protractor": "^2.2.0",
     "systemjs-builder": "^0.13.5",
     "tsd": "^0.6.4"
   },
   "scripts": {
-    "install": "jspm install && tsd install"
+    "install": "jspm install && tsd install && gulp"
   }
 }
