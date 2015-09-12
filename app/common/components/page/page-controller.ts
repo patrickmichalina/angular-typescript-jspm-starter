@@ -4,9 +4,7 @@ class PageController {
     
     public static $inject = ['PageTitleService', 'PageMetaService'];
 
-    constructor(private PageTitleService: IPageTitleService, private PageMetaService: IPageMetaService) {
-
-    }
+    constructor(private PageTitleService: IPageTitleService, private PageMetaService: IPageMetaService) { }
 
     getTitle() {
         return this.PageTitleService.getTitle();

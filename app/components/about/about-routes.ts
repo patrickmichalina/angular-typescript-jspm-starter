@@ -1,5 +1,5 @@
 /// <reference path="../../../typings/tsd.d.ts" />
-import {IPageTitleService} from '../../common/common-interfaces';
+import {IPageTitleService, IPageMetaService} from '../../common/common-interfaces';
 routes.$inject = ['$stateProvider'];
 
 function routes($stateProvider: ng.ui.IStateProvider) {
@@ -15,6 +15,11 @@ function routes($stateProvider: ng.ui.IStateProvider) {
             resolve: {
                 title: ['PageTitleService', function(PageTitleService: IPageTitleService) {
                     PageTitleService.setTitle("About");
+                }],
+                meta: ['PageMetaService', function(PageMetaService: IPageMetaService) {
+                    PageMetaService.reset();
+                    PageMetaService.setMetaDescription('Describing the purpose of this applications');
+                    PageMetaService.setMetaKeywords(['Angular', 'JSPM', 'TypeScript']);
                 }]
             }
         });

@@ -1,34 +1,36 @@
 import {IPageMetaService} from './page-meta-service-interface'
 
 class PageMetaService implements IPageMetaService {
-    private metaDescription: string;
-    private metaKeywords: string;
+    private _metaDescription: string;
+    private _metaKeywords: string;
 	
+    constructor() { }
+    
 	getMetaDescription(): string {
-		return this.metaDescription;
+		return this._metaDescription;
 	}
 	
     setMetaDescription(newMetaDescription: string): void {
-		this.metaDescription = newMetaDescription;
+		this._metaDescription = newMetaDescription;
 	}
 	
     getMetaKeywords(): string {
-		return this.metaKeywords;
+		return this._metaKeywords;
 	}
 	
     setMetaKeywords(newKeywords: Array<string>): void {
 		for (var key in newKeywords) {
-            if (this.metaKeywords === '') {
-                this.metaKeywords += newKeywords[key];
+            if (this._metaKeywords === '') {
+                this._metaKeywords += newKeywords[key];
             } else {
-                this.metaKeywords += ', ' + newKeywords[key];
+                this._metaKeywords += ', ' + newKeywords[key];
             }
         }
 	}
 	
     reset(): void {
-		this.metaDescription = '';
-        this.metaKeywords = '';
+		this._metaDescription = '';
+        this._metaKeywords = '';
 	}
 }
 
