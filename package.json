@@ -12,7 +12,6 @@
     "registry": "github",
     "dependencies": {
       "angular": "angular/bower-angular@^1.4.5",
-      "angular-animate": "angular/bower-angular-animate@^1.4.5",
       "angular-mocks": "angular/bower-angular-mocks@^1.4.5",
       "angular-ui-router": "angular-ui/ui-router@^0.2.15"
     },
