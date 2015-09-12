@@ -3,6 +3,7 @@ A super minimal TypeScript based Angular project using JSPM to manage packages/d
 
 ##Get Started
 To download this project and start working on your local machine issue these commands in a terminal window (make sure you have Node installed):
+
 1. `git clone https://github.com/patrickmichalina/angular-typescript-jspm-starter.git`
 2. `npm install`
 3. `gulp`
