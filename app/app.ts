@@ -1,7 +1,7 @@
 /// <reference path="../typings/tsd.d.ts" />
 import {module, element} from "angular";
 import 'angular-ui-router';
-import {Routes} from './layout/routes';
+import {AppRoutes} from './app-routes';
 import {LocationProviderConfig, ExceptionHandlerConfig} from './config/config';
 import {ComponentModule} from './components/components';
 import {CommonModule} from './common/common';
@@ -13,7 +13,7 @@ let Module = module("app", [
 ]);
 
 // configure
-Module.config(Routes);
+Module.config(AppRoutes);
 Module.config(LocationProviderConfig);
 Module.config(ExceptionHandlerConfig);
 
