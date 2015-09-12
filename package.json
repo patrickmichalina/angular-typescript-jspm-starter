@@ -38,6 +38,6 @@
     "tsd": "^0.6.4"
   },
   "scripts": {
-    "install": "jspm install && tsd install && gulp"
+    "install": "jspm install && tsd install"
   }
 }
