@@ -2,7 +2,7 @@
 import {module} from 'angular';
 import {PageMetaService} from './page-meta-service';
 
-let PageMetaServiceModule = 
+let PageMetaServiceModule: ng.IModule = 
     module('PageMetaService', [])
         .service('PageMetaService', PageMetaService);
 
