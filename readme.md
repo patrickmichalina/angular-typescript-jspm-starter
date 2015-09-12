@@ -9,7 +9,7 @@ To download this project and start working on your local machine, run these comm
 3. `gulp`
 
 ###Deployment
-To bundle the project into a usable directory "dist". This is just to get you started, there are many more tasks to add until this repo is complete.
+To bundle the project into a single directory with minified resources:
 
 1. `gulp dist`
 
