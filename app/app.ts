@@ -1,5 +1,5 @@
 /// <reference path="../typings/tsd.d.ts" />
-import {module} from "angular";
+import {module, element} from "angular";
 import 'angular-ui-router';
 import {Routes} from './layout/routes';
 import {LocationProviderConfig, ExceptionHandlerConfig} from './config/config';
@@ -16,3 +16,10 @@ let Module = module("app", [
 Module.config(Routes);
 Module.config(LocationProviderConfig);
 Module.config(ExceptionHandlerConfig);
+
+// manually bootstrap angular for JSPM ES6
+element(document).ready(()=> {
+    angular.bootstrap(document, [Module.name]), {
+        strictDi: true
+    }
+});

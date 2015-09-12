@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var rename = require("gulp-rename");
 var browserSync = require('browser-sync').create();
 var historyApiFallback = require('connect-history-api-fallback');
+var htmlreplace = require('gulp-html-replace');
 
 gulp.task('bundle', function(cb) {
 	var Builder = require('systemjs-builder');
@@ -10,8 +11,13 @@ gulp.task('bundle', function(cb) {
 
 	builder.loadConfig("./config.js")
 		.then(function() {
-			return builder.buildSFX("app", "dist/build.min.js", { minify: true });
-		})
+			return builder.buildSFX("app", "dist/build.min.js", { minify: true })
+				.then(function() { // Inject minified script into index
+      				return gulp.src('dist/index.html')
+        				.pipe(htmlreplace({'js': 'build.min.js'}))
+        		.pipe(gulp.dest('dist/'));
+    		});
+		})		
 		.then(function() {
 			cb();
 		})
@@ -22,8 +28,7 @@ gulp.task('bundle', function(cb) {
 });
 
 gulp.task('index', function(){
-	return gulp.src('index-bundle.html')
-		.pipe(rename('index.html'))
+	return gulp.src('index.html')
 		.pipe(gulp.dest('dist'));
 });
 
@@ -42,7 +47,7 @@ gulp.task('serve', function() {
     gulp.watch("./app/**/*.*").on('change', browserSync.reload);
 });
 
-gulp.task('dist', gulp.parallel('bundle', 'index', 'basic-bundle'));
+gulp.task('dist', gulp.series('index', gulp.parallel('bundle', 'basic-bundle')));
 
 gulp.task('serve-dist', gulp.series('dist', function(){
 	browserSync.init({

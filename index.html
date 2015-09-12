@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-strict-di>
+<html lang="en">
 
 <head>
 	<meta charset="utf-8" />
@@ -8,29 +8,26 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="fragment" content="!" />
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-	<title>Angular TypeScript JSPM Starter</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 	<base href="/"></base>
-
-	<script src="jspm_packages/system.src.js"></script>
-	<script src="config.js"></script>
-	<script>
-		System.import('app')
-			.then(function() {
-				return System.import('angular');
-			})
-			.then(function(angular) {
-				angular.bootstrap(document, ['app']);
-			})
-			.catch(function(err) {
-				console.log('Error: ', err.stack);
-			});
-	</script>
+	<title>Angular TypeScript JSPM Starter</title>
 </head>
 
 <body ng-cloak>
+	<noscript>
+        <h1>Please enable Javascript</h1>
+        <p>Requires your browser to have Javascript enabled.
+            <a href="http://enable-javascript.com">Learn more</a>
+		</p>
+	</noscript>
 	<div ui-view></div>
+	<!-- build:js -->
+	<script src="jspm_packages/system.src.js"></script>
+	<script src="config.js"></script>
+	<script>
+    	System.import('app/app').catch(console.error.bind(console));
+	</script>
+	<!-- endbuild -->
 </body>
 
 </html>
