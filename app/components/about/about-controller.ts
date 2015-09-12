@@ -1,5 +1,8 @@
 export default class AboutController {
-	constructor() {
-		
+
+	static $inject = ['PageTitleService'];
+	
+	constructor(private PageTitleService) {
+
 	}
 }

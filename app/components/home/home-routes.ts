@@ -1,9 +1,10 @@
 /// <reference path="../../../typings/tsd.d.ts" />
+import controller from './home-controller';
+import {IPageTitleService} from '../../common/common-interfaces';
 
 routes.$inject = ['$stateProvider'];
 
-function routes ($stateProvider: ng.ui.IStateProvider) {
-    'use strict';
+function routes($stateProvider: ng.ui.IStateProvider) {
     $stateProvider
         .state('main.home', {
             url: '',
@@ -11,6 +12,11 @@ function routes ($stateProvider: ng.ui.IStateProvider) {
                 'content@main': {
                     template: '<home></home>'
                 }
+            },
+            resolve: {
+                title: ['PageTitleService', function(PageTitleService: IPageTitleService) {
+                    PageTitleService.setTitle("Home");
+                }]
             }
         });
 }

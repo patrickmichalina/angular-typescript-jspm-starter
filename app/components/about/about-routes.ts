@@ -1,8 +1,8 @@
 /// <reference path="../../../typings/tsd.d.ts" />
-
+import {IPageTitleService} from '../../common/common-interfaces';
 routes.$inject = ['$stateProvider'];
 
-function routes ($stateProvider: ng.ui.IStateProvider) {
+function routes($stateProvider: ng.ui.IStateProvider) {
     'use strict';
     $stateProvider
         .state('main.about', {
@@ -11,6 +11,11 @@ function routes ($stateProvider: ng.ui.IStateProvider) {
                 'content@main': {
                     template: '<about></about>'
                 }
+            },
+            resolve: {
+                title: ['PageTitleService', function(PageTitleService: IPageTitleService) {
+                    PageTitleService.setTitle("About");
+                }]
             }
         });
 }

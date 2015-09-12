@@ -1,10 +1,10 @@
-import {IPageTitleService} from '../../common-interfaces';
+import {IPageTitleService, IPageMetaService} from '../../common-interfaces';
 
 class PageController {
     
-    static $inject = ['PageTitleService'];
-    
-    constructor(private PageTitleService: IPageTitleService) {
+    public static $inject = ['PageTitleService', 'PageMetaService'];
+
+    constructor(private PageTitleService: IPageTitleService, private PageMetaService: IPageMetaService) {
 
     }
 
@@ -13,14 +13,12 @@ class PageController {
     }
 
     getMetaKeywords() {
-        //return this.PageMeta.getMetaKeywords();
+        return this.PageMetaService.getMetaKeywords();
     }
 
     getMetaDescription() {
-        //return this.PageMeta.getMetaDescription();
+        return this.PageMetaService.getMetaDescription();
     }
 }
-
-// PageController.$inject = ['PageTitleService'];
 
 export {PageController}

@@ -1,5 +1,5 @@
 #Angular TypeScript JSPM Starter
-A super minimal TypeScript based Angular project using JSPM to manage packages/dependencies. 
+A super minimal TypeScript based Angular project using JSPM to manage packages/dependencies. Something I really like about this structure is that the .js files are never generated locally. Instead they are transpiled on the fly with the typescript-jspm plugin.
 
 ##Get Started
 To download this project and start working on your local machine, run these commands in a terminal window (ensure  [Node](https://nodejs.org) is installed):

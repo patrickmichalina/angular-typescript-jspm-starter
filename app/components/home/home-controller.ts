@@ -1,6 +1,8 @@
 export default class HomeController {
 	
-	constructor() {
+	static $inject = ['PageTitleService'];
+	
+	constructor(private PageTitleService) {
 
 	}
 }

@@ -2,11 +2,8 @@
 import {module} from 'angular';
 import {PageTitleService} from './page-title-service';
 
-let PageTitleServiceModule = angular.module('app.common.services', [
-    
-]);
-
-PageTitleServiceModule
-    .service('PageTitleService', PageTitleService);
+let PageTitleServiceModule: ng.IModule = 
+    module('PageTitleService', [])
+        .service('PageTitleService', PageTitleService);
 
 export {PageTitleServiceModule};
