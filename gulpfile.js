@@ -41,10 +41,9 @@ gulp.task('serve', function() {
     browserSync.init({
         server: "./",
 		middleware: [historyApiFallback()],
-		browser: "google chrome"
+		browser: "google chrome",
+		files: "./app/**/*.*"
     });
-
-    gulp.watch("./app/**/*.*").on('change', browserSync.reload);
 });
 
 gulp.task('dist', gulp.series('index', gulp.parallel('bundle', 'basic-bundle')));
