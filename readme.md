@@ -1,4 +1,6 @@
 #Angular TypeScript JSPM Starter
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/patrickmichalina/angular-typescript-jspm-starter.svg)](https://greenkeeper.io/)
 A super minimal TypeScript based Angular project using JSPM to manage packages/dependencies. Something I really like about this structure is that the .js files are never generated locally. Instead they are transpiled on the fly with the typescript-jspm plugin.
 
 ##Get Started
